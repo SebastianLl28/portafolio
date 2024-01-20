@@ -1,0 +1,45 @@
+<header class="header">
+  <nav class="nav">
+    <ul class="list">
+      <li class="list__element"><a href="#home" class="list__link">Inicio</a></li>
+      <li class="list__element"><a href="#experience" class="list__link">Experiencia</a></li>
+      <li class="list__element"><a href="#project" class="list__link">Proyectos</a></li>
+      <li class="list__element"><a href="#about" class="list__link">Sobre mí</a></li>
+      <li class="list__element"><a href="#contact" class="list__link">Contactame</a></li>
+    </ul>
+  </nav>
+  <div id="line" class="header__line"/>
+</header>
+
+<style lang="scss">
+  @import '../scss/_mixins.scss';
+
+  .header {
+    @include container();
+    position: fixed;
+    top: 3rem;
+    right: 3rem;
+
+    &__line{
+      width: 2rem;
+      height: 2px;
+      background-color: #fff;
+    }
+  }
+  
+  .nav {
+    border-bottom: 1px solid white;
+    padding-bottom: .5em;
+  }
+
+  .list {
+    display: flex;
+
+    &__link {
+      padding-inline: 1rem;
+    }
+  }
+</style>
+
+<script>
+</script>
