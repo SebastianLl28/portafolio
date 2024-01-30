@@ -1,14 +1,26 @@
-*,
-*::before,
-*::after {
+// *,
+// *::before,
+// *::after {
+//   margin: 0;
+//   padding: 0;
+//   border: 0;
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
+//   vertical-align: baseline;
+//   min-width: 0;
+// }
+
+* {
   margin: 0;
   padding: 0;
-  border: 0;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  vertical-align: baseline;
-  min-width: 0;
+  transition: 0.7s ease;
 }
+*::after,
+*::before {
+  transition: 0.7s ease;
+}
+
 img,
 picture,
 video,
@@ -112,17 +124,7 @@ body {
   font-size: 100%;
   line-height: 1.4em;
   background-color: #09090B;
-  // background-color: #212128;
   color: #fff;
   font-family: Helvetica, sans-serif, Arial;
-}
-
-.icons {
-  height: 5rem;
-  width: auto;
-  opacity: 0.03;
-  animation: init_icon 0.5s forwards;
-  position: absolute;
-  // filter: opacity(0.5);
-  ;
+  background-image: url("/noisy.webp");
 }

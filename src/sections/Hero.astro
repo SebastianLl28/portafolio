@@ -11,7 +11,7 @@ import ReactQueryIcon from '../assets/react-query.svg';
 import NodeJsIcon from '../assets/nodejs.svg';
 import AstroIcon from '../assets/astro.svg';
 ---
-<section class="hero">
+<section class="hero" id="#home">
   <div class="hero__container">
     <Image src={ProfileIcon} alt="profile joji" class="hero__profile" height="112" width="112" loading="eager"/>
     <h1 class="hero__title">Hola, Soy Sebastian Llamuca</h1>
@@ -26,14 +26,14 @@ import AstroIcon from '../assets/astro.svg';
       </a>
       <button class="button__button">Mi CV</button>
     </div>
+    <Image src={ReactIcon} alt="react icon" class="hero__bg" height="40" loading="eager"/>
+    <Image src={SassIcon} alt="sass icon" class="hero__bg" height="40" loading="eager"/>
+    <Image src={TailwindIcon} alt="tailwindcss icon" class="hero__bg" height="40" loading="eager"/>
+    <Image src={ReactQueryIcon} alt="react query icon" class="hero__bg" height="40" loading="eager"/>
+    <Image src={NodeJsIcon} alt="node js icon" class="hero__bg" height="40" loading="eager"/>
+    <Image src={AstroIcon} alt="astro icon" class="hero__bg" height="40" loading="eager"/>
   </div>
   <Image src={ArrowIcon} alt="arrow icon" class="hero__arrow" height="40" loading="eager"/>
-  <Image src={ReactIcon} alt="react icon" class="hero__bg" height="40" loading="eager"/>
-  <Image src={SassIcon} alt="sass icon" class="hero__bg" height="40" loading="eager"/>
-  <Image src={TailwindIcon} alt="tailwindcss icon" class="hero__bg" height="40" loading="eager"/>
-  <Image src={ReactQueryIcon} alt="react query icon" class="hero__bg" height="40" loading="eager"/>
-  <Image src={NodeJsIcon} alt="node js icon" class="hero__bg" height="40" loading="eager"/>
-  <Image src={AstroIcon} alt="astro icon" class="hero__bg" height="40" loading="eager"/>
   <div class="bg"></div>
 </section>
 
@@ -42,53 +42,57 @@ import AstroIcon from '../assets/astro.svg';
 
   .hero__bg {
     position: absolute;
-    bottom: -1.5rem;
-    left: -1.5rem;
     width: 7.8rem;
     height: auto;
-    opacity: 0.1;
+    opacity: 0.07;
     pointer-events: none;
     user-select: none;
+    &:nth-of-type(2) {
+      bottom: -2rem;
+      left: -13rem;
+    }
     
     &:nth-of-type(3) {
       left: unset;
-      right: -1rem;
+      right: -22rem;
       bottom: 8rem;
       width: 8rem;
     }
     &:nth-of-type(4) {
       bottom: 2rem;
-      right: 30dvw;
+      right: 10rem;
       left: unset;
     }
     &:nth-of-type(5) {
-      left: 18dvw;
-      bottom: 20dvh;
+      left: 12rem;
+      bottom: 10rem;
     }
     &:nth-of-type(6) {
-      left: 7rem;
-      top: 20dvh;
+      left: -5rem;
+      top: 15rem;
       width: 5.5rem;
     }
     &:nth-of-type(7) {
       left: unset;
-      right: 5rem;
+      right: -15rem;
       width: 5.5rem;
-      top: 35dvh;
+      top: 20rem;
     }
   }
 
   .hero {
     height: 100dvh;
+    max-height: 1100px;
     display: flex;
     position: relative;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    overflow: hidden;
 
     &__container {
       @include container;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     &__profile {
@@ -103,13 +107,23 @@ import AstroIcon from '../assets/astro.svg';
       line-height: 1.5;
       font-weight: bolder;
       text-align: center;
-      color: rgb(255, 255, 255);
-      font-size: clamp(3.2em, 6vw - 2rem, 6em);
+      color: rgb(233, 233, 233);
+      font-size: clamp(3.2em, 5vw, 5em);
       text-wrap: balance;
+      position: relative;
+      transform: translateY(15px);
+      opacity: 0.5;
+      animation: init-title 0.4s forwards linear;
+    }
+    
+    @keyframes init-title {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     &__subTitle {
-      // font-size: 2.5em;
       font-size: clamp(1.7em, 5vw - 2rem, 2.5em);
       line-height: 1.6;
       font-weight: bold;
@@ -156,6 +170,7 @@ import AstroIcon from '../assets/astro.svg';
       top: -2rem;
       transition: all 0.4s;
       animation:
+
         updown 2s linear infinite forwards alternate,
         init 0.8s forwards;
     }
@@ -192,20 +207,14 @@ import AstroIcon from '../assets/astro.svg';
     }
 
     &__icon {
-      height: 1.8rem;
+      height: 2.8rem;
       width: auto;
     }
 
     &__cta {
-      border: 2px solid white;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: .5rem;
       cursor: pointer;
       transition: all 0.2s linear;
-
       &:hover {
         background-color: #ffffff30;
       }

@@ -3,33 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import Header from '../components/Header.astro'
 import Hero from "../sections/Hero.astro";
 ---
-
 <Layout title="Portafolio Sebastian Llamuca">
   <Header/>
   <main>
     <Hero/>
   </main>
-  <!-- <img src="/noisy.webp" alt="" class="a"> -->
 </Layout>
-
-<style lang="scss" is:global>
-  
-  body::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("/noisy.webp");
-    pointer-events: none;
-    user-select: none;
-  }
-
-  // section {
-  //   padding-top: 96.98px;
-  // }
-</style>
-<!-- #8d8d8d -->
