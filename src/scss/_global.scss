@@ -14,8 +14,6 @@ picture,
 video,
 iframe,
 figure {
-  max-width: 100%;
-  width: 100%;
   display: block;
   -o-object-fit: cover;
   object-fit: cover;
@@ -105,7 +103,6 @@ td {
 }
 
 svg {
-  width: 100%;
   display: block;
   fill: currentColor;
 }
@@ -115,14 +112,15 @@ body {
   font-size: 100%;
   line-height: 1.4em;
   background-color: #09090B;
+  // background-color: #212128;
   color: #fff;
   font-family: Helvetica, sans-serif, Arial;
 }
 
 .icons {
-  height: 7rem;
+  height: 5rem;
   width: auto;
-  opacity: 0.04;
+  opacity: 0.03;
   animation: init_icon 0.5s forwards;
   position: absolute;
   // filter: opacity(0.5);

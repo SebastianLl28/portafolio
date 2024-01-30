@@ -3,7 +3,6 @@ const links = [
   { link: "#home", text: "Inicio" },
   { link: "#experience", text: "Experiencia" },
   { link: "#project", text: "Proyectos" },
-  { link: "#about", text: "Sobre mí" },
   { link: "#contact", text: "Contactame" },
 ];
 ---
@@ -35,7 +34,7 @@ const links = [
     justify-content: end;
     z-index: 1;
 
-    @media (width <= 700px) {
+    @media (width <= 1000px) {
       justify-content: center;
     }
 
@@ -57,7 +56,7 @@ const links = [
   .nav {
     padding-top: 3rem;
     padding-right: 3rem;
-    @media (width <= 700px) {
+    @media (width <= 1000px) {
       padding-right: 0;
     }
   }
@@ -65,9 +64,32 @@ const links = [
   .list {
     display: flex;
 
+    &.active {
+      & > .list__element {
+
+        & > .list__link {
+          background-color: rgba(0, 0, 0, 0.7);
+        }
+      }
+    }
+
+    &__element {
+      overflow: hidden;
+      &:first-of-type {
+        border-top-left-radius: 10px;
+      }
+      
+      &:last-of-type{
+        border-top-right-radius: 10px;
+      }
+    }
+
     &__link {
       padding: 0.8em 1rem;
       border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(2px);
+      font-weight: bold;
+      transition: background-color 0.35s;
     }
   }
 </style>
@@ -123,4 +145,31 @@ const links = [
     const { width, left } = getBoundingClientByHash();
     setStyleProperty(line, width, left);
   });
+
+  const updateLinePosition = () => {
+    const { width, left } = window.location.hash
+      ? getBoundingClientByHash()
+      : list_link[0].getBoundingClientRect();
+
+    setStyleProperty(line, width, left);
+    setStyleProperty(lineHover, width, left);
+  };
+
+  updateLinePosition()
+
+  window.addEventListener("hashchange", updateLinePosition);
+
+  window.addEventListener("resize", updateLinePosition);
+
+  const list  = document.querySelector('.list') as HTMLElement
+
+  window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY;
+    if (scrollPosition > 10) {
+
+      list.classList.add('active')
+    } else {
+      list.classList.remove('active')
+    }
+  })
 </script>

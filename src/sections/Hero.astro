@@ -1,28 +1,83 @@
 ---
 import { Image } from "astro:assets";
-import ReactIcon from '../assets/react.svg'
-import ReactQueryIcon from '../assets/react-query-icon.svg'
-import TailwindIcon from '../assets/tailwindcss-icon.svg'
-import SassIcon from '../assets/sass.svg'
-import NodejsIcon from '../assets/nodejs.svg'
-import ArrowUp from '../assets/arrow-up.svg'
+import GithubIcon from "../assets/github.svg";
+import LinkedInIcon from "../assets/linkedin.svg";
+import ProfileIcon from "../assets/profile.webp";
+import ArrowIcon from '../assets/arrow-down.svg';
+import ReactIcon from '../assets/react.svg';
+import SassIcon from '../assets/sass.svg';
+import TailwindIcon from '../assets/tailwindcss.svg';
+import ReactQueryIcon from '../assets/react-query.svg';
+import NodeJsIcon from '../assets/nodejs.svg';
+import AstroIcon from '../assets/astro.svg';
 ---
-
 <section class="hero">
-  <h1 class="hero__title">Hola, Soy Sebastian Llamuca</h1>
-  <h2 class="hero__subTitle">Desarrollador Web Front-end</h2>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus nesciunt earum in incidunt placeat soluta facilis impedit commodi nam excepturi?</p>
+  <div class="hero__container">
+    <Image src={ProfileIcon} alt="profile joji" class="hero__profile" height="112" width="112" loading="eager"/>
+    <h1 class="hero__title">Hola, Soy Sebastian Llamuca</h1>
+    <h2 class="hero__subTitle">Desarrollador Web Front-end</h2>
+    <p class="hero__paragraph">Soy estudiante de Desarrollo de Sistemas de Información, encuentro mi pasión en el constante perfeccionamiento de páginas web.</p>
+    <div class="button">
+      <a href="#" class="button__cta">
+        <Image class="button__icon" src={GithubIcon} alt="Github Icon" loading="eager"/>
+      </a>
+      <a href="#" class="button__cta">
+        <Image class="button__icon" src={LinkedInIcon} alt="LinkedIn Icon" loading="eager"/>
+      </a>
+      <button class="button__button">Mi CV</button>
+    </div>
+  </div>
+  <Image src={ArrowIcon} alt="arrow icon" class="hero__arrow" height="40" loading="eager"/>
+  <Image src={ReactIcon} alt="react icon" class="hero__bg" height="40" loading="eager"/>
+  <Image src={SassIcon} alt="sass icon" class="hero__bg" height="40" loading="eager"/>
+  <Image src={TailwindIcon} alt="tailwindcss icon" class="hero__bg" height="40" loading="eager"/>
+  <Image src={ReactQueryIcon} alt="react query icon" class="hero__bg" height="40" loading="eager"/>
+  <Image src={NodeJsIcon} alt="node js icon" class="hero__bg" height="40" loading="eager"/>
+  <Image src={AstroIcon} alt="astro icon" class="hero__bg" height="40" loading="eager"/>
   <div class="bg"></div>
-  <Image src={ReactIcon} alt="react icon" class="icons hero__icon" />
-  <Image src={ReactQueryIcon} alt="react query icon" class="icons hero__icon"/>
-  <!-- <img src="/javascript.svg" alt="javaScript icon" class="icons hero__icon"> -->
-  <Image src={TailwindIcon} alt="tailwind icon" class="icons hero__icon"/>
-  <Image src={SassIcon} alt="sass icon" class="icons hero__icon"/>
-  <Image src={NodejsIcon} alt="sass icon" class="icons hero__icon"/>
-  <img src="/arrow-up.svg" alt="arrow down icon" class="hero__arrow"/>
 </section>
 
 <style lang="scss">
+  @use "../scss/_mixins.scss" as *;
+
+  .hero__bg {
+    position: absolute;
+    bottom: -1.5rem;
+    left: -1.5rem;
+    width: 7.8rem;
+    height: auto;
+    opacity: 0.1;
+    pointer-events: none;
+    user-select: none;
+    
+    &:nth-of-type(3) {
+      left: unset;
+      right: -1rem;
+      bottom: 8rem;
+      width: 8rem;
+    }
+    &:nth-of-type(4) {
+      bottom: 2rem;
+      right: 30dvw;
+      left: unset;
+    }
+    &:nth-of-type(5) {
+      left: 18dvw;
+      bottom: 20dvh;
+    }
+    &:nth-of-type(6) {
+      left: 7rem;
+      top: 20dvh;
+      width: 5.5rem;
+    }
+    &:nth-of-type(7) {
+      left: unset;
+      right: 5rem;
+      width: 5.5rem;
+      top: 35dvh;
+    }
+  }
+
   .hero {
     height: 100dvh;
     display: flex;
@@ -32,68 +87,127 @@ import ArrowUp from '../assets/arrow-up.svg'
     flex-direction: column;
     overflow: hidden;
 
+    &__container {
+      @include container;
+    }
+
+    &__profile {
+      width: 7rem;
+      height: 7rem;
+      margin-inline: auto;
+      border-radius: 50%;
+      border: 2px solid black;
+    }
+
     &__title {
-      font-size: 4em;
-      line-height: 1.75;
+      line-height: 1.5;
       font-weight: bolder;
+      text-align: center;
+      color: rgb(255, 255, 255);
+      font-size: clamp(3.2em, 6vw - 2rem, 6em);
+      text-wrap: balance;
     }
 
     &__subTitle {
-      font-size: 1.9em;
-      line-height: 1.5;
+      // font-size: 2.5em;
+      font-size: clamp(1.7em, 5vw - 2rem, 2.5em);
+      line-height: 1.6;
       font-weight: bold;
+      text-align: center;
+    }
+
+    &__arrow {
+      position: absolute;
+      bottom: 2rem;
+      animation: top-down 0.5s infinite alternate linear;
+    }
+
+    @keyframes top-down {
+      to {
+        transform: translateY(0px);
+      } 
+      from {
+        transform: translateY(4px);
+      }
     }
 
     & > .bg {
       border-radius: 30%;
       height: 30rem;
-      width: 50rem;
-      background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+      width: 50dvw;
+      background-image: linear-gradient(
+        to right top,
+        #d16ba5,
+        #c777b9,
+        #ba83ca,
+        #aa8fd8,
+        #9a9ae1,
+        #8aa7ec,
+        #79b3f4,
+        #69bff8,
+        #52cffe,
+        #41dfff,
+        #46eefa,
+        #5ffbf1
+      );
       filter: blur(140px);
       position: absolute;
       z-index: -10;
-      top: -7rem;
-      transition: all 0.3s;
-      animation: updown 2s linear infinite forwards alternate, init 0.8s forwards;
+      top: -2rem;
+      transition: all 0.4s;
+      animation:
+        updown 2s linear infinite forwards alternate,
+        init 0.8s forwards;
     }
 
-    &__arrow {
-      width: 2rem;
-      height: 2rem;
-      transform: rotate(180deg);
-      position: absolute;
-      bottom: 2rem;
-      animation: arrow-animation 1.5s linear infinite alternate;
+    &__paragraph {
+      font-size: 1.3em;
+      text-align: center;
+      line-height: 1.8;
+      text-wrap: pretty;
+      max-width: 90ch;
+      margin-inline: auto;
+      margin-top: 0.2em;
+    }
+  }
+
+  .button {
+    padding-top: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    &__button {
+      border: 2px solid #fff;
+      padding: 0.8em 2em;
+      border-radius: 2rem;
+      cursor: pointer;
+      transition: all 0.2s linear;
+      font-weight: bold;
+
+      &:hover {
+        background-color: #ffffff30;
+      }
     }
 
-    &__icon{
-      &:first-of-type {
-        bottom: -2rem;
-        left: -2rem;
-      }
-      
-      &:nth-of-type(2) {
-        bottom: 50dvh;
-        right: -2rem;
-      }
+    &__icon {
+      height: 1.8rem;
+      width: auto;
+    }
 
-      &:nth-of-type(3) {
-        width: 5rem;
-        height: auto;
-        top: 10rem;
-        left: 6rem;
-      }
+    &__cta {
+      border: 2px solid white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: .5rem;
+      cursor: pointer;
+      transition: all 0.2s linear;
 
-      &:nth-of-type(4) {
-        width: 7rem;
-        height: auto;
-        bottom: -2rem;
-        right: 6rem;
-      }
-      &:nth-of-type(5) {
-        width: 5.5rem;
-        height: auto;
-        left: 8rem;
+      &:hover {
+        background-color: #ffffff30;
       }
     }
   }
@@ -114,17 +228,14 @@ import ArrowUp from '../assets/arrow-up.svg'
     to {
       transform: translateY(-16rem);
     }
-  }  
+  }
 
   @keyframes arrow-animation {
     from {
       transform: translateY(-1.8rem) rotate(180deg);
-      
     }
     to {
       transform: translateY(0rem) rotate(180deg);
     }
   }
 </style>
-
-<!-- Egresado de la carrera Desarrollo de sistema de información, Desarrollador web. De Lima Perú -->
