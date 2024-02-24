@@ -3,37 +3,100 @@ import { Image } from "astro:assets";
 import GithubIcon from "../assets/github.svg";
 import LinkedInIcon from "../assets/linkedin.svg";
 import ProfileIcon from "../assets/profile.webp";
-import ArrowIcon from '../assets/arrow-down.svg';
-import ReactIcon from '../assets/react.svg';
-import SassIcon from '../assets/sass.svg';
-import TailwindIcon from '../assets/tailwindcss.svg';
-import ReactQueryIcon from '../assets/react-query.svg';
-import NodeJsIcon from '../assets/nodejs.svg';
-import AstroIcon from '../assets/astro.svg';
+import ArrowIcon from "../assets/arrow-down.svg";
+import ReactIcon from "../assets/react.svg";
+import SassIcon from "../assets/sass.svg";
+import TailwindIcon from "../assets/tailwindcss.svg";
+import ReactQueryIcon from "../assets/react-query.svg";
+import NodeJsIcon from "../assets/nodejs.svg";
+import AstroIcon from "../assets/astro.svg";
 ---
+
 <section class="hero" id="#home">
   <div class="hero__container">
-    <Image src={ProfileIcon} alt="profile joji" class="hero__profile" height="112" width="112" loading="eager"/>
+    <Image
+      src={ProfileIcon}
+      alt="profile joji"
+      class="hero__profile"
+      height="112"
+      width="112"
+      loading="eager"
+    />
     <h1 class="hero__title">Hola, Soy Sebastian Llamuca</h1>
     <h2 class="hero__subTitle">Desarrollador Web Front-end</h2>
-    <p class="hero__paragraph">Soy estudiante de Desarrollo de Sistemas de Información, encuentro mi pasión en el constante perfeccionamiento de páginas web.</p>
+    <p class="hero__paragraph">
+      Soy estudiante de Desarrollo de Sistemas de Información, encuentro mi
+      pasión en el constante perfeccionamiento de páginas web.
+    </p>
     <div class="button">
       <a href="#" class="button__cta">
-        <Image class="button__icon" src={GithubIcon} alt="Github Icon" loading="eager"/>
+        <Image
+          class="button__icon"
+          src={GithubIcon}
+          alt="Github Icon"
+          loading="eager"
+        />
       </a>
       <a href="#" class="button__cta">
-        <Image class="button__icon" src={LinkedInIcon} alt="LinkedIn Icon" loading="eager"/>
+        <Image
+          class="button__icon"
+          src={LinkedInIcon}
+          alt="LinkedIn Icon"
+          loading="eager"
+        />
       </a>
       <button class="button__button">Mi CV</button>
     </div>
-    <Image src={ReactIcon} alt="react icon" class="hero__bg" height="40" loading="eager"/>
-    <Image src={SassIcon} alt="sass icon" class="hero__bg" height="40" loading="eager"/>
-    <Image src={TailwindIcon} alt="tailwindcss icon" class="hero__bg" height="40" loading="eager"/>
-    <Image src={ReactQueryIcon} alt="react query icon" class="hero__bg" height="40" loading="eager"/>
-    <Image src={NodeJsIcon} alt="node js icon" class="hero__bg" height="40" loading="eager"/>
-    <Image src={AstroIcon} alt="astro icon" class="hero__bg" height="40" loading="eager"/>
+    <Image
+      src={ReactIcon}
+      alt="react icon"
+      class="hero__bg"
+      height="40"
+      loading="eager"
+    />
+    <Image
+      src={SassIcon}
+      alt="sass icon"
+      class="hero__bg"
+      height="40"
+      loading="eager"
+    />
+    <Image
+      src={TailwindIcon}
+      alt="tailwindcss icon"
+      class="hero__bg"
+      height="40"
+      loading="eager"
+    />
+    <Image
+      src={ReactQueryIcon}
+      alt="react query icon"
+      class="hero__bg"
+      height="40"
+      loading="eager"
+    />
+    <Image
+      src={NodeJsIcon}
+      alt="node js icon"
+      class="hero__bg"
+      height="40"
+      loading="eager"
+    />
+    <Image
+      src={AstroIcon}
+      alt="astro icon"
+      class="hero__bg"
+      height="40"
+      loading="eager"
+    />
   </div>
-  <Image src={ArrowIcon} alt="arrow icon" class="hero__arrow" height="40" loading="eager"/>
+  <Image
+    src={ArrowIcon}
+    alt="arrow icon"
+    class="hero__arrow"
+    height="40"
+    loading="eager"
+  />
   <div class="bg"></div>
 </section>
 
@@ -51,7 +114,7 @@ import AstroIcon from '../assets/astro.svg';
       bottom: -2rem;
       left: -13rem;
     }
-    
+
     &:nth-of-type(3) {
       left: unset;
       right: -22rem;
@@ -116,7 +179,7 @@ import AstroIcon from '../assets/astro.svg';
       opacity: 0.5;
       animation: init-title 0.4s forwards linear;
     }
-    
+
     @keyframes init-title {
       to {
         opacity: 1;
@@ -140,7 +203,7 @@ import AstroIcon from '../assets/astro.svg';
     @keyframes top-down {
       to {
         transform: translateY(0px);
-      } 
+      }
       from {
         transform: translateY(4px);
       }
@@ -171,7 +234,6 @@ import AstroIcon from '../assets/astro.svg';
       top: -2rem;
       transition: all 0.4s;
       animation:
-
         updown 2s linear infinite forwards alternate,
         init 0.8s forwards;
     }
