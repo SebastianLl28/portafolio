@@ -1,15 +1,16 @@
 ---
 import { Image } from "astro:assets";
-import GithubIcon from "../assets/github.svg";
-import LinkedInIcon from "../assets/linkedin.svg";
-import ProfileIcon from "../assets/profile.webp";
-import ArrowIcon from "../assets/arrow-down.svg";
-import ReactIcon from "../assets/react.svg";
-import SassIcon from "../assets/sass.svg";
-import TailwindIcon from "../assets/tailwindcss.svg";
-import ReactQueryIcon from "../assets/react-query.svg";
-import NodeJsIcon from "../assets/nodejs.svg";
-import AstroIcon from "../assets/astro.svg";
+import GithubIcon from "@assets/github.svg";
+import LinkedInIcon from "@assets/linkedin.svg";
+import ProfileIcon from "@assets/profile.webp";
+import ArrowIcon from "@assets/arrow-down.svg";
+import ReactIcon from "@assets/react.svg";
+import SassIcon from "@assets/sass.svg";
+import TailwindIcon from "@assets/tailwindcss.svg";
+import ReactQueryIcon from "@assets/react-query.svg";
+import NodeJsIcon from "@assets/nodejs.svg";
+import AstroIcon from "@assets/astro.svg";
+import pdf from "@assets/sebastian_llamuca_cv.pdf";
 ---
 
 <section class="hero" id="#home">
@@ -23,13 +24,20 @@ import AstroIcon from "../assets/astro.svg";
       loading="eager"
     />
     <h1 class="hero__title">Hola, Soy Sebastian Llamuca</h1>
-    <h2 class="hero__subTitle">Desarrollador Web Front-end</h2>
+    <h2 class="hero__subTitle">
+      Desarrollador Web <span class="hero__color">Front-end</span>
+    </h2>
     <p class="hero__paragraph">
-      Soy estudiante de Desarrollo de Sistemas de Información, encuentro mi
-      pasión en el constante perfeccionamiento de páginas web.
+      Soy egresado de la carrera <span class="hero__color"
+        >Desarrollo de Sistemas de Información</span
+      >, encuentro mi pasión en el constante perfeccionamiento de páginas web.
     </p>
     <div class="button">
-      <a href="#" class="button__cta">
+      <a
+        href="https://github.com/SebastianLl28"
+        class="button__cta"
+        target="_blank"
+      >
         <Image
           class="button__icon"
           src={GithubIcon}
@@ -37,7 +45,11 @@ import AstroIcon from "../assets/astro.svg";
           loading="eager"
         />
       </a>
-      <a href="#" class="button__cta">
+      <a
+        href="https://www.linkedin.com/in/sebasti%C3%A1n-alonso-llamuca-due%C3%B1as-115b09255/"
+        class="button__cta"
+        target="_blank"
+      >
         <Image
           class="button__icon"
           src={LinkedInIcon}
@@ -45,7 +57,7 @@ import AstroIcon from "../assets/astro.svg";
           loading="eager"
         />
       </a>
-      <button class="button__button">Mi CV</button>
+      <a href={pdf} target="_blank" class="button__button">Mi CV</a>
     </div>
     <Image
       src={ReactIcon}
@@ -101,7 +113,7 @@ import AstroIcon from "../assets/astro.svg";
 </section>
 
 <style lang="scss">
-  @use "../scss/_mixins.scss" as *;
+  @use "../../scss/_mixins.scss" as *;
 
   .hero__bg {
     position: absolute;
@@ -111,7 +123,7 @@ import AstroIcon from "../assets/astro.svg";
     pointer-events: none;
     user-select: none;
     &:nth-of-type(2) {
-      bottom: -2rem;
+      bottom: 3rem;
       left: -13rem;
     }
 
@@ -123,11 +135,11 @@ import AstroIcon from "../assets/astro.svg";
     }
     &:nth-of-type(4) {
       bottom: 2rem;
-      right: 10rem;
+      right: 18rem;
       left: unset;
     }
     &:nth-of-type(5) {
-      left: 12rem;
+      left: 16rem;
       bottom: 10rem;
     }
     &:nth-of-type(6) {
@@ -137,7 +149,7 @@ import AstroIcon from "../assets/astro.svg";
     }
     &:nth-of-type(7) {
       left: unset;
-      right: -15rem;
+      right: -10rem;
       width: 5.5rem;
       top: 20rem;
     }
@@ -146,6 +158,7 @@ import AstroIcon from "../assets/astro.svg";
   .hero {
     height: 100dvh;
     max-height: 1100px;
+    min-height: 800px;
     display: flex;
     position: relative;
     justify-content: center;
@@ -172,26 +185,21 @@ import AstroIcon from "../assets/astro.svg";
       font-weight: bolder;
       text-align: center;
       color: rgb(233, 233, 233);
-      font-size: clamp(3.2em, 5vw, 5em);
+      font-size: clamp(2.4em, 5vw, 5em);
       text-wrap: balance;
       position: relative;
       transform: translateY(15px);
       opacity: 0.5;
-      animation: init-title 0.4s forwards linear;
-    }
-
-    @keyframes init-title {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      animation: init-text 0.4s forwards linear;
     }
 
     &__subTitle {
-      font-size: clamp(1.7em, 5vw - 2rem, 2.5em);
+      font-size: clamp(1.4em, 5vw - 2rem, 2.5em);
       line-height: 1.6;
       font-weight: bold;
       text-align: center;
+      position: relative;
+      animation: init-text 0.4s forwards linear;
     }
 
     &__arrow {
@@ -205,7 +213,7 @@ import AstroIcon from "../assets/astro.svg";
         transform: translateY(0px);
       }
       from {
-        transform: translateY(4px);
+        transform: translateY(10px);
       }
     }
 
@@ -239,13 +247,18 @@ import AstroIcon from "../assets/astro.svg";
     }
 
     &__paragraph {
-      font-size: 1.3em;
+      font-size: clamp(1em, 5vw - 2.3rem, 1.8em);
       text-align: center;
       line-height: 1.8;
       text-wrap: pretty;
-      max-width: 90ch;
+      max-width: 60ch;
       margin-inline: auto;
       margin-top: 0.2em;
+      animation: init-text 0.4s forwards linear;
+    }
+
+    &__color {
+      color: #d16ba5;
     }
   }
 
@@ -255,6 +268,7 @@ import AstroIcon from "../assets/astro.svg";
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    animation: init-text 0.4s forwards linear;
 
     &__button {
       border: 2px solid #fff;
@@ -302,12 +316,14 @@ import AstroIcon from "../assets/astro.svg";
     }
   }
 
-  @keyframes arrow-animation {
+  @keyframes init-text {
     from {
-      transform: translateY(-1.8rem) rotate(180deg);
+      opacity: 0;
+      transform: translateY(30px);
     }
     to {
-      transform: translateY(0rem) rotate(180deg);
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 </style>

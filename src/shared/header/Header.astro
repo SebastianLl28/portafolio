@@ -66,7 +66,6 @@ const links = [
 
     &.active {
       & > .list__element {
-
         & > .list__link {
           background-color: rgba(0, 0, 0, 0.7);
         }
@@ -78,8 +77,8 @@ const links = [
       &:first-of-type {
         border-top-left-radius: 10px;
       }
-      
-      &:last-of-type{
+
+      &:last-of-type {
         border-top-right-radius: 10px;
       }
     }
@@ -90,6 +89,7 @@ const links = [
       backdrop-filter: blur(2px);
       font-weight: bold;
       transition: background-color 0.35s;
+      font-size: clamp(0.8em, 1.5vw, 1em);
     }
   }
 </style>
@@ -155,21 +155,20 @@ const links = [
     setStyleProperty(lineHover, width, left);
   };
 
-  updateLinePosition()
+  updateLinePosition();
 
   window.addEventListener("hashchange", updateLinePosition);
 
   window.addEventListener("resize", updateLinePosition);
 
-  const list  = document.querySelector('.list') as HTMLElement
+  const list = document.querySelector(".list") as HTMLElement;
 
-  window.addEventListener('scroll', () => {
+  window.addEventListener("scroll", () => {
     const scrollPosition = window.scrollY;
     if (scrollPosition > 10) {
-
-      list.classList.add('active')
+      list.classList.add("active");
     } else {
-      list.classList.remove('active')
+      list.classList.remove("active");
     }
-  })
+  });
 </script>
