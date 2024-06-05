@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  min-height: 100dvh;
+  font-size: 100%;
+  line-height: 1.4em;
+  background-color: #010101;
+  color: #fff;
+  font-family: Helvetica, sans-serif, Arial;
+  background-image: url("../assets/noisy.webp");
+}
+
+.bg {
+  border-radius: 30%;
+  /* height: 30rem; */
+  width: 50dvw;
+  background-image: linear-gradient(
+    to right top,
+    #d16ba5,
+    #c777b9,
+    #ba83ca,
+    #aa8fd8,
+    #9a9ae1,
+    #8aa7ec,
+    #79b3f4,
+    #69bff8,
+    #52cffe,
+    #41dfff,
+    #46eefa,
+    #5ffbf1
+  );
+  filter: blur(140px);
+  position: absolute;
+  z-index: -1;
+  /* top: -25%; */
+  top: -2rem;
+  transition: all 0.4s;
+  animation: updown 2s linear infinite forwards alternate, init 0.8s forwards;
+  max-width: 55rem;
+  max-height: 40rem;
+}
+
+@keyframes updown {
+  from {
+    /* height: 32rem; */
+    height: 50dvh;
+  }
+  to {
+    height: 45dvh;
+    /* height: 28rem; */
+  }
+}
+
+@keyframes init {
+  from {
+    transform: translateY(-30rem);
+  }
+  to {
+    transform: translateY(-16rem);
+  }
+}
+
+.title {
+  @apply leading-normal text-center font-bold text-4xl;
+}
+
+.animate-float {
+  animation: float 2s infinite linear forwards alternate;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-0.4rem);
+  }
+}
