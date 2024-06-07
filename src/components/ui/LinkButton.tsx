@@ -6,14 +6,19 @@ interface LinkButtonProps extends LinkProps {
   className?: string;
   target?: string;
 }
-
-const LinkButton = ({ children, className, ...args }: LinkButtonProps) => {
+const LinkButton = ({
+  children,
+  className,
+  target = "_self",
+  ...args
+}: LinkButtonProps) => {
   return (
     <Link
       className={cn(
         "inline-block bg-white/10 px-4 py-2 rounded-full border-white border-2 duration-100 relative hover:scale-110 hover:bg-white/20",
         className
       )}
+      target={target}
       {...args}
     >
       {children}

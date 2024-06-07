@@ -35,11 +35,11 @@ body {
   position: absolute;
   z-index: -1;
   /* top: -25%; */
-  top: -2rem;
   transition: all 0.4s;
   animation: updown 2s linear infinite forwards alternate, init 0.8s forwards;
   max-width: 55rem;
   max-height: 40rem;
+  @apply top-4 md:-top-8;
 }
 
 @keyframes updown {

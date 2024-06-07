@@ -6,7 +6,7 @@ import Bg from "./components/Bg";
 
 export default function Hero() {
   return (
-    <section className="flex flex-col items-center justify-center h-dvh relative px-4 max-h-[1080px]">
+    <section className="flex flex-col items-center justify-center h-dvh relative px-4 max-h-[1080px] min-h-[45rem] overflow-hidden">
       <Image
         src={ProfileImage}
         alt="profile image"
