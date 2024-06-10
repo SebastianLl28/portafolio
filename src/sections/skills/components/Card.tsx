@@ -9,7 +9,7 @@ interface CardProps {
 
 export default function Card({ image, alt, colorBg }: CardProps) {
   return (
-    <div className="w-full aspect-square rounded-3xl p-4 relative overflow-hidden">
+    <div className="w-full aspect-square rounded-3xl p-4 relative overflow-hidden flex items-center justify-center">
       <Image
         src={image}
         alt={alt}

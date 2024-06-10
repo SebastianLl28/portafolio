@@ -8,7 +8,7 @@ export default function Footer() {
           <h2 className="text-xl font-semibold">Sebastian Llamuca Dueñas</h2>
           <p>llamucasebas@gmail.com</p>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 flex-wrap">
           <LinkButton
             href="https://www.linkedin.com/in/sebastian-llamuca"
             target="_blank"
