@@ -155,7 +155,7 @@ const Card = ({
             </LinkButton>
           </div>
         ) : (
-          <div className="flex items-center gap-1 text-gray-400 mt-2">
+          <div className="hidden lg:flex items-center gap-1 text-gray-400 mt-2">
             <svg
               className="mb-0.5"
               xmlns="http://www.w3.org/2000/svg"
