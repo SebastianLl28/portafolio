@@ -4,7 +4,7 @@ import Card from "./components/Card";
 export default function Experience() {
   return (
     <section className="my-16 md:my-32">
-      <h2 className="title">Experience</h2>
+      <h2 className="title">Experiencia Laboral</h2>
       <ul className="flex flex-col items-center space-y-6 mt-7 md:mt-12">
         {data.map((item) => (
           <Card key={item.id} {...item} />

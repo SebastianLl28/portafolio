@@ -24,7 +24,7 @@ export const data = [
   },
   {
     id: 2,
-    title: "Intranet Devdatep Consulting",
+    title: "Intranet",
     description:
       "En este proyecto realicé mantenimiento y mejoras en la intranet de la empresa Devdatep Consulting. La intranet es una aplicación web que permite a los empleados marcar su asistencia, ver sus reportes de asistencia, entre otras funcionalidades.",
     tags: [
@@ -41,9 +41,9 @@ export const data = [
   },
   {
     id: 3,
-    title: "Landing Page de Devdatep Consulting",
+    title: "Landing Page",
     description:
-      "Landing page de la empresa Devdatep Consulting. La página web muestra información sobre los servicios que ofrece la empresa y un formulario de contacto.",
+      "Landing page de la empresa Devdatep Consulting. La página web muestra información sobre los servicios que ofrece la empresa.",
     tags: ["React", "TailwindCSS"],
     image: LandingDevDatepImage,
     isPrivate: true,
