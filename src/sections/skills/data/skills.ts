@@ -78,7 +78,7 @@ export const skills: Skill[] = [
     alt: "Prisma icon",
   },
   {
-    title: "MaterialUI",
+    title: "Material UI",
     image: materialImage,
     alt: "MaterialUI icon",
   },
@@ -113,7 +113,7 @@ export const skills: Skill[] = [
     alt: "Sequelize icon",
   },
   {
-    title: "ExpressJS",
+    title: "Express",
     image: expressImage,
     alt: "ExpressJS icon",
   },
@@ -128,7 +128,7 @@ export const skills: Skill[] = [
     alt: "Astro icon",
   },
   {
-    title: "StyledComponents",
+    title: "Styled Components",
     image: styledImage,
     alt: "StayledComponents icon",
   },

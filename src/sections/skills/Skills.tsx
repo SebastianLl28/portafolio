@@ -1,6 +1,5 @@
 import Card from "./components/Card";
 import { skills } from "./data/skills";
-import { color } from "./utils/color";
 
 export default function Skills() {
   return (
@@ -13,7 +12,6 @@ export default function Skills() {
             title={skill.title}
             image={skill.image}
             alt={skill.alt}
-            colorBg={color(skill.title)}
           />
         ))}
       </div>
