@@ -27,7 +27,7 @@ export default function Card({ title, date, image, description }: CardProps) {
         {description.map((desc, index) => (
           <li
             key={index}
-            className="list-disc ml-4 md:ml-6 [&>p>span]:text-[#f775be] md:text-lg"
+            className="list-disc ml-4 md:ml-6 [&>p>span]:text-primary md:text-lg"
           >
             {desc}
           </li>

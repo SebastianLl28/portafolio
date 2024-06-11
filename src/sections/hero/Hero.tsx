@@ -15,10 +15,10 @@ export default function Hero() {
         className="rounded-full"
         role="img"
       />
-      <p className="text-3xl mt-4 font-extrabold text-balance text-center md:text-5xl xl:text-7xl leading-normal">
+      <p className="text-3xl mt-4 font-extrabold text-balance text-center md:text-5xl xl:text-7xl">
         Hola, Soy <TextGradient>Sebastian Llamuca</TextGradient>
       </p>
-      <h1 className="text-2xl mt-2 font-bold text-pretty text-center bg-gradient-to-b from-white to-[#f775be] text-transparent bg-clip-text md:text-4xl md:mt-4 xl:mt-6 xl:text-5xl">
+      <h1 className="text-2xl mt-2 font-bold text-pretty text-center bg-gradient-to-b from-white to-secondary text-transparent bg-clip-text md:text-4xl md:mt-4 xl:mt-6 xl:text-5xl">
         Desarrollador Frontend
       </h1>
       <p className="text-lg mt-2 leading-normal max-w-prose text-pretty text-center md:text-2xl xl:mt-4">

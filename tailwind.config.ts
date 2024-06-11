@@ -27,6 +27,10 @@ const config: Config = {
           },
         },
       },
+      colors: {
+        primary: "#f775be",
+        secondary: "#ff1399",
+      },
     },
   },
   plugins: [],
