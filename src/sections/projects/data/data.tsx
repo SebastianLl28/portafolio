@@ -2,8 +2,18 @@ import RickMortyImage from "@/assets/rick-morty-web.png";
 import SiomImage from "@/assets/siom.png";
 import IntranetImage from "@/assets/intranet.png";
 import LandingDevDatepImage from "@/assets/landing-devdatep.png";
+import CivaErpImage from "@/assets/civa-bg.png";
 
 export const data = [
+  {
+    id: 3,
+    title: "ERP Interno - Turismo CIVA",
+    description:
+      "Sistema ERP desarrollado para Turismo CIVA, una de las principales empresas de transporte terrestre en Perú. El sistema permite gestionar la venta de pasajes, envíos de encomiendas, sesiones de ventas, control de personal, administración de clientes y otros procesos internos clave.",
+    tags: ["React", "Spring Boot", "Java", "JavaScript", "MySQL", "AWS"],
+    image: CivaErpImage,
+    isPrivate: true,
+  },
   {
     id: 1,
     title: "Sistema de asistencia",
@@ -47,16 +57,5 @@ export const data = [
     tags: ["React", "TailwindCSS"],
     image: LandingDevDatepImage,
     isPrivate: true,
-  },
-  {
-    id: 4,
-    title: "Rick and Morty",
-    description:
-      "Este es un proyecto personal que realicé para practicar mis habilidades. La página web muestra información de los personajes de la serie Rick and Morty.",
-    tags: ["React", "TailwindCSS", "React Query", "Axios", "Zustand"],
-    image: RickMortyImage,
-    github: "https://github.com/SebastianLl28/rick-and-morty-api",
-    demo: "https://majestic-otter-d66261.netlify.app",
-    isPrivate: false,
   },
 ];
