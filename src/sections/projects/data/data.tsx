@@ -1,4 +1,3 @@
-import RickMortyImage from "@/assets/rick-morty-web.png";
 import SiomImage from "@/assets/siom.png";
 import IntranetImage from "@/assets/intranet.png";
 import LandingDevDatepImage from "@/assets/landing-devdatep.png";
