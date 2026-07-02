@@ -1,18 +1,24 @@
+import Reveal from "@/components/motion/Reveal";
 import { data } from "./data/data";
 import Card from "./components/Card";
 
 export default function Experience() {
   return (
-    <section className="my-16 md:my-32">
-      <h2 className="title">Experiencia Laboral</h2>
-      <ul className="flex flex-col items-center space-y-8 mt-7 md:mt-12">
+    <section
+      id="experiencia"
+      className="mx-auto w-11/12 max-w-5xl scroll-mt-24 py-16 md:py-24"
+    >
+      <Reveal>
+        <p className="eyebrow">Trayectoria</p>
+        <h2 className="section-title mt-2">Experiencia</h2>
+      </Reveal>
+      <ul className="mt-10 md:mt-14">
         {data.map((item) => (
-          <Card key={item.id} {...item} />
+          <Reveal key={item.id} as="li">
+            <Card {...item} />
+          </Reveal>
         ))}
       </ul>
-      <p className="w-fit mx-auto border-green-400 border rounded-full px-4 py-2 bg-[#0d3d1555] text-green-400 mt-6">
-        En busque de nuevas oportunidades
-      </p>
     </section>
   );
 }

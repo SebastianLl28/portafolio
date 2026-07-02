@@ -1,11 +1,7 @@
-export function BadgeBackgroundShine({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export function Badge({ children }: { children: React.ReactNode }) {
   return (
-    <div className="inline-flex animate-shine items-center justify-center rounded-full text-xs md:text-sm border border-neutral-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-3 py-1 font-medium text-neutral-200 transition-colors">
+    <span className="inline-flex items-center rounded border border-line bg-white/5 px-2 py-0.5 font-mono text-xs text-muted">
       {children}
-    </div>
+    </span>
   );
 }

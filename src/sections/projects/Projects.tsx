@@ -1,13 +1,22 @@
+import Reveal from "@/components/motion/Reveal";
 import { data } from "./data/data";
 import Card from "./components/Card";
 
 export default function Projects() {
   return (
-    <section className="my-16 md:my-32 space-y-7 md:space-y-12">
-      <h2 className="title">Proyectos</h2>
-      <div className="flex flex-col items-center gap-y-10 md:gap-y-12 lg:gap-y-16">
+    <section
+      id="proyectos"
+      className="mx-auto w-11/12 max-w-5xl scroll-mt-24 py-16 md:py-24"
+    >
+      <Reveal>
+        <p className="eyebrow">Trabajo real, en producción</p>
+        <h2 className="section-title mt-2">Proyectos</h2>
+      </Reveal>
+      <div className="mt-10 flex flex-col gap-16 md:mt-14 lg:gap-24">
         {data.map((project, index) => (
-          <Card key={project.id} {...project} index={index} />
+          <Reveal key={project.id}>
+            <Card {...project} index={index} />
+          </Reveal>
         ))}
       </div>
     </section>

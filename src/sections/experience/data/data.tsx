@@ -1,62 +1,72 @@
+import { StaticImageData } from "next/image";
 import DevdatepImage from "@/assets/devdatep.webp";
 import CivaImage from "@/assets/civa-logo.png";
 
-export const data = [
+export interface ExperienceEntry {
+  id: number;
+  company: string;
+  role: string;
+  period: string;
+  current?: boolean;
+  image: StaticImageData;
+  points: React.JSX.Element[];
+  stack: string[];
+}
+
+export const data: ExperienceEntry[] = [
   {
     id: 1,
-    title: "Turismo CIVA - Desarrollador Full Stack",
-    date: "Julio 2024 - Actual",
+    company: "Turismo CIVA",
+    role: "Desarrollador Full Stack",
+    period: "Jul 2024 — Actual",
+    current: true,
     image: CivaImage,
-    description: [
+    points: [
       <p key={1}>
-        Desarrollo de <span>funcionalidades full stack</span> en el ERP interno
-        de la empresa, abarcando frontend, backend y base de datos.
+        Desarrollo <span>funcionalidades de punta a punta</span> en el ERP
+        interno que soporta la venta de pasajes y el envío de encomiendas a
+        nivel nacional.
       </p>,
       <p key={2}>
-        Implementación de <span>requerimientos funcionales</span> solicitados
-        por distintas áreas como carga, boletos y administración.
+        Implemento <span>requerimientos funcionales</span> de las áreas de
+        carga, boletos y administración, desde la interfaz hasta la base de
+        datos.
       </p>,
       <p key={3}>
-        Gestión de <span>consultas y migraciones</span> en bases de datos MySQL.
+        Gestiono <span>consultas y migraciones</span> sobre bases de datos
+        MySQL en producción.
       </p>,
       <p key={4}>
-        Soporte al sistema para <span>venta de pasajes</span>,{" "}
-        <span>envíos de carga</span> y otros procesos internos de la empresa.
-      </p>,
-      <p key={5}>
-        Organización del trabajo en equipo con <span>metodología Scrum</span> y
-        gestión de tareas mediante <span>JIRA</span>.
+        Trabajo con <span>Scrum</span> y gestión de tareas en{" "}
+        <span>JIRA</span> junto al equipo de sistemas.
       </p>,
     ],
+    stack: ["React", "Spring Boot", "Java", "MySQL", "AWS"],
   },
   {
     id: 2,
-    title: "Devdatep Consulting - Desarrollador Frontend",
-    date: "Diciembre 2023 - Mayo 2024",
+    company: "Devdatep Consulting",
+    role: "Desarrollador Frontend",
+    period: "Dic 2023 — May 2024",
     image: DevdatepImage,
-    description: [
+    points: [
       <p key={1}>
-        Desarrollo de <span>aplicaciones web</span>, utilizando diversas
-        tecnologías frontend.
+        Desarrollé <span>aplicaciones web responsivas</span> para clientes de
+        la consultora con React y TailwindCSS.
       </p>,
       <p key={2}>
-        Implementación de <span>diseño responsivo</span> en páginas web.
+        Definí la <span>estructura base de los proyectos</span> frontend que
+        adoptó el equipo.
       </p>,
       <p key={3}>
-        Establecimiento de <span>estructuras de proyecto</span> optimizadas.
+        Realicé <span>revisiones de código</span> y coordiné la asignación de
+        tareas dentro del equipo.
       </p>,
       <p key={4}>
-        <span>Revisión de código</span> y provisión de retroalimentación
-        constructiva.
-      </p>,
-      <p key={5}>
-        Supervisión de tareas y <span>asignación de responsabilidades</span>{" "}
-        dentro del equipo.
-      </p>,
-      <p key={6}>
-        <span>Gestión del repositorio</span>, garantizando un flujo de trabajo
-        fluido.
+        Administré el <span>repositorio del equipo</span>, cuidando un flujo de
+        trabajo ordenado con Git.
       </p>,
     ],
+    stack: ["React", "TailwindCSS", "Laravel", "MySQL"],
   },
 ];

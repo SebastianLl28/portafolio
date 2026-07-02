@@ -22,124 +22,140 @@ import {
   styledImage,
   gitImage,
   githubImage,
+  angularImage,
+  hibernateImage,
+  jiraImage,
+  springBootImage,
+  viteImage,
 } from "../assets/index";
 import { Color } from "../utils/color";
 
-interface Skill {
+export type SkillCategory =
+  | "Frontend"
+  | "Estilos"
+  | "Backend y bases de datos"
+  | "Herramientas";
+
+export interface Skill {
   title: keyof typeof Color;
   image: StaticImageData;
   alt: string;
+  category: SkillCategory;
 }
 
+export const categories: SkillCategory[] = [
+  "Frontend",
+  "Estilos",
+  "Backend y bases de datos",
+  "Herramientas",
+];
+
 export const skills: Skill[] = [
-  {
-    title: "HTML",
-    image: htmlImage,
-    alt: "HTML icon",
-  },
-  {
-    title: "CSS",
-    image: cssImage,
-    alt: "CSS icon",
-  },
+  { title: "HTML", image: htmlImage, alt: "HTML", category: "Frontend" },
   {
     title: "JavaScript",
     image: jsImage,
-    alt: "JavaScript icon",
+    alt: "JavaScript",
+    category: "Frontend",
   },
   {
     title: "TypeScript",
     image: tsImage,
-    alt: "TypeScript icon",
+    alt: "TypeScript",
+    category: "Frontend",
   },
+  { title: "React", image: reactImage, alt: "React", category: "Frontend" },
+  { title: "NextJS", image: nextImage, alt: "NextJS", category: "Frontend" },
   {
-    title: "React",
-    image: reactImage,
-    alt: "React icon",
+    title: "Angular",
+    image: angularImage,
+    alt: "Angular",
+    category: "Frontend",
   },
-  {
-    title: "NodeJS",
-    image: nodeImage,
-    alt: "NodeJS icon",
-  },
+  { title: "Astro", image: astroImage, alt: "Astro", category: "Frontend" },
+  { title: "Pug", image: pugImage, alt: "Pug", category: "Frontend" },
+  { title: "CSS", image: cssImage, alt: "CSS", category: "Estilos" },
   {
     title: "TailwindCSS",
     image: tailwindImage,
-    alt: "ExpressJS icon",
+    alt: "TailwindCSS",
+    category: "Estilos",
   },
-  {
-    title: "Figma",
-    image: figmaImage,
-    alt: "Figma icon",
-  },
-  {
-    title: "Prisma",
-    image: prismaImage,
-    alt: "Prisma icon",
-  },
+  { title: "Sass", image: sassImage, alt: "Sass", category: "Estilos" },
   {
     title: "Material UI",
     image: materialImage,
-    alt: "MaterialUI icon",
-  },
-  {
-    title: "Sass",
-    image: sassImage,
-    alt: "Sass icon",
-  },
-  {
-    title: "Emotion",
-    image: emotionImage,
-    alt: "Emotion icon",
-  },
-  {
-    title: "Pug",
-    image: pugImage,
-    alt: "Pug icon",
-  },
-  {
-    title: "MySQL",
-    image: mysqlImage,
-    alt: "MySQL icon",
-  },
-  {
-    title: "PostgreSQL",
-    image: postgresqlImage,
-    alt: "PostgreSQL icon",
-  },
-  {
-    title: "Sequelize",
-    image: sequelizeImage,
-    alt: "Sequelize icon",
-  },
-  {
-    title: "Express",
-    image: expressImage,
-    alt: "ExpressJS icon",
-  },
-  {
-    title: "NextJS",
-    image: nextImage,
-    alt: "NextJS icon",
-  },
-  {
-    title: "Astro",
-    image: astroImage,
-    alt: "Astro icon",
+    alt: "Material UI",
+    category: "Estilos",
   },
   {
     title: "Styled Components",
     image: styledImage,
-    alt: "StayledComponents icon",
+    alt: "Styled Components",
+    category: "Estilos",
   },
   {
-    title: "Git",
-    image: gitImage,
-    alt: "Git icon",
+    title: "Emotion",
+    image: emotionImage,
+    alt: "Emotion",
+    category: "Estilos",
   },
+  {
+    title: "NodeJS",
+    image: nodeImage,
+    alt: "NodeJS",
+    category: "Backend y bases de datos",
+  },
+  {
+    title: "Express",
+    image: expressImage,
+    alt: "Express",
+    category: "Backend y bases de datos",
+  },
+  {
+    title: "Spring Boot",
+    image: springBootImage,
+    alt: "Spring Boot",
+    category: "Backend y bases de datos",
+  },
+  {
+    title: "Hibernate",
+    image: hibernateImage,
+    alt: "Hibernate",
+    category: "Backend y bases de datos",
+  },
+  {
+    title: "MySQL",
+    image: mysqlImage,
+    alt: "MySQL",
+    category: "Backend y bases de datos",
+  },
+  {
+    title: "PostgreSQL",
+    image: postgresqlImage,
+    alt: "PostgreSQL",
+    category: "Backend y bases de datos",
+  },
+  {
+    title: "Prisma",
+    image: prismaImage,
+    alt: "Prisma",
+    category: "Backend y bases de datos",
+  },
+  {
+    title: "Sequelize",
+    image: sequelizeImage,
+    alt: "Sequelize",
+    category: "Backend y bases de datos",
+  },
+  { title: "Git", image: gitImage, alt: "Git", category: "Herramientas" },
+  { title: "Vite", image: viteImage, alt: "Vite", category: "Herramientas" },
+  { title: "JIRA", image: jiraImage, alt: "JIRA", category: "Herramientas" },
   {
     title: "GitHub",
     image: githubImage,
-    alt: "GitHub icon",
+    alt: "GitHub",
+    category: "Herramientas",
   },
+  { title: "Figma", image: figmaImage, alt: "Figma", category: "Herramientas" },
 ];

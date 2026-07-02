@@ -20,3 +20,8 @@ export { default as astroImage } from "./astro.webp";
 export { default as styledImage } from "./styled.webp";
 export { default as gitImage } from "./git.webp";
 export { default as githubImage } from "./github.webp";
+export { default as angularImage } from "./angular.webp";
+export { default as hibernateImage } from "./hibernate.webp";
+export { default as jiraImage } from "./jira.webp";
+export { default as springBootImage } from "./springboot.webp";
+export { default as viteImage } from "./vite.webp";

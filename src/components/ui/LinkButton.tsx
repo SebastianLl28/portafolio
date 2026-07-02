@@ -6,6 +6,7 @@ interface LinkButtonProps extends LinkProps {
   className?: string;
   target?: string;
 }
+
 const LinkButton = ({
   children,
   className,
@@ -15,7 +16,7 @@ const LinkButton = ({
   return (
     <Link
       className={cn(
-        "inline-block bg-white/10 px-4 py-2 rounded-full border-white border-2 duration-100 relative hover:scale-110 hover:bg-white/20",
+        "inline-flex items-center gap-2 rounded-full border border-line bg-white/5 px-5 py-2.5 text-sm font-medium transition-colors hover:border-primary/60 hover:bg-white/10",
         className
       )}
       target={target}

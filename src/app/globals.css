@@ -2,79 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 100dvh;
-  font-size: 100%;
-  line-height: 1.4em;
-  background-color: #010101;
-  color: #fff;
-  font-family: Helvetica, sans-serif, Arial;
+  background-color: #08080c;
+  color: #f2f2f5;
   background-image: url("../assets/noisy.webp");
 }
 
-.bg {
-  border-radius: 30%;
-  /* height: 30rem; */
-  width: 50dvw;
-  background-image: linear-gradient(
-    to right top,
-    #d16ba5,
-    #c777b9,
-    #ba83ca,
-    #aa8fd8,
-    #9a9ae1,
-    #8aa7ec,
-    #79b3f4,
-    #69bff8,
-    #52cffe,
-    #41dfff,
-    #46eefa,
-    #5ffbf1
-  );
-  filter: blur(140px);
-  position: absolute;
-  z-index: -1;
-  /* top: -25%; */
-  transition: all 0.4s;
-  animation: updown 2s linear infinite forwards alternate, init 0.8s forwards;
-  max-width: 55rem;
-  max-height: 40rem;
-  @apply top-4 md:-top-8;
+/* La selección de texto comparte el magenta del resaltado del hero:
+   un solo gesto repetido en toda la página. */
+::selection {
+  background-color: #ff1399;
+  color: #fff;
 }
 
-@keyframes updown {
-  from {
-    /* height: 32rem; */
-    height: 50dvh;
+@layer components {
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.2em] text-primary;
   }
-  to {
-    height: 45dvh;
-    /* height: 28rem; */
+
+  .section-title {
+    @apply font-display text-3xl font-semibold tracking-tight md:text-4xl;
   }
 }
 
-@keyframes init {
-  from {
-    transform: translateY(-30rem);
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
-  to {
-    transform: translateY(-16rem);
-  }
-}
-
-.title {
-  @apply leading-normal text-center font-bold text-4xl;
-}
-
-.animate-float {
-  animation: float 2s infinite linear forwards alternate;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-0.4rem);
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

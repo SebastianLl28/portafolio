@@ -8,22 +8,20 @@ interface CardProps {
 }
 
 export default function Card({ image, alt, title }: CardProps) {
-  const { border, name, bg } = color(title);
+  const { border, name } = color(title);
 
   return (
-    <div
-      className={`w-full aspect-square rounded-3xl p-4 relative overflow-hidden flex items-center justify-center border-2 border-transparent ${border} duration-300`}
-      title={name}
+    <li
+      className={`flex items-center gap-2.5 rounded-lg border border-line bg-surface px-3.5 py-2.5 transition-colors duration-300 ${border}`}
     >
       <Image
         src={image}
         alt={alt}
-        width={80}
-        height={80}
-        priority={false}
-        className="w-full h-full rounded object-contain"
+        width={22}
+        height={22}
+        className="h-[22px] w-[22px] object-contain"
       />
-      <div className={`absolute inset-5 -z-20 blur-xl ${bg}`} />
-    </div>
+      <span className="font-mono text-sm text-white/90">{name}</span>
+    </li>
   );
 }

@@ -1,38 +1,65 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
+import { Badge } from "@/components/ui/Badge";
+import { ExperienceEntry } from "../data/data";
 
-interface CardProps {
-  title: string;
-  date: string;
-  image: StaticImageData;
-  description: JSX.Element[];
-}
-
-export default function Card({ title, date, image, description }: CardProps) {
+export default function Card({
+  company,
+  role,
+  period,
+  current,
+  image,
+  points,
+  stack,
+}: ExperienceEntry) {
   return (
-    <ol className="w-11/12 p-3.5 md:px-6 md:py-5 space-y-5 flex flex-col animate-shine border border-white/10 bg-[linear-gradient(110deg,#000103,45%,#0f1318,55%,#010101)] bg-[length:200%_100%] transition-colors rounded-lg max-w-[60rem] ">
-      <div className="grid grid-cols-[min-content,auto] grid-rows-[auto,auto] gap-x-2">
-        <Image
-          src={image}
-          width={55}
-          height={55}
-          alt="devdatep"
-          className="row-span-2 min-w-[45px] self-center mr-4"
-        />
-        <h3 className="text-lg font-semibold line-clamp-2 leading-tight self-end md:text-4xl">
-          {title}
-        </h3>
-        <p className="text-md">{date}</p>
+    <div className="relative grid gap-4 md:grid-cols-[11rem,1fr] md:gap-10">
+      <div className="flex items-start justify-between md:block">
+        <p
+          className={`font-mono text-sm ${
+            current ? "text-emerald-400" : "text-muted"
+          }`}
+        >
+          {period}
+        </p>
       </div>
-      <ul className="space-y-3">
-        {description.map((desc, index) => (
-          <li
-            key={index}
-            className="list-disc ml-4 md:ml-6 [&>p>span]:text-primary md:text-xl"
-          >
-            {desc}
-          </li>
-        ))}
-      </ul>
-    </ol>
+      <div className="relative border-l border-line pb-12 pl-6 md:pl-10">
+        <span
+          className={`absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full ${
+            current ? "bg-emerald-400" : "bg-secondary"
+          }`}
+          aria-hidden="true"
+        />
+        <div className="flex items-center gap-3">
+          <Image
+            src={image}
+            width={40}
+            height={40}
+            alt={`Logo de ${company}`}
+            className="h-10 w-10 rounded-md object-contain"
+          />
+          <div>
+            <h3 className="font-display text-xl font-semibold md:text-2xl">
+              {company}
+            </h3>
+            <p className="text-sm text-primary">{role}</p>
+          </div>
+        </div>
+        <ul className="mt-5 space-y-2.5">
+          {points.map((point, index) => (
+            <li
+              key={index}
+              className="ml-4 list-disc text-muted marker:text-secondary [&>p>span]:text-white"
+            >
+              {point}
+            </li>
+          ))}
+        </ul>
+        <div className="mt-5 flex flex-wrap gap-1.5">
+          {stack.map((tech) => (
+            <Badge key={tech}>{tech}</Badge>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }

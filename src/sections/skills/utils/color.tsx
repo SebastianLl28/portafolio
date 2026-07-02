@@ -26,6 +26,9 @@ export enum Color {
   "GitHub",
   "Figma",
   "Vite",
+  "Spring Boot",
+  "Hibernate",
+  "JIRA",
 }
 
 export interface ITechMap {
@@ -69,7 +72,14 @@ const techMap: ITechMap[] = [
   { name: "Git", bg: "bg-[#f34f29]", border: "hover:border-[#f34f29]" },
   { name: "GitHub", bg: "bg-[#fff]", border: "hover:border-[#fff]" },
   { name: "Figma", bg: "bg-[#ffa571]", border: "hover:border-[#ffa571]" },
-  { name: "Vite", bg: "bg-[#646c72]", border: "hover:border-[#646c72]" },
+  { name: "Vite", bg: "bg-[#646cff]", border: "hover:border-[#646cff]" },
+  {
+    name: "Spring Boot",
+    bg: "bg-[#6db33f]",
+    border: "hover:border-[#6db33f]",
+  },
+  { name: "Hibernate", bg: "bg-[#bcae79]", border: "hover:border-[#bcae79]" },
+  { name: "JIRA", bg: "bg-[#2684ff]", border: "hover:border-[#2684ff]" },
 ];
 
 export const color = (color: keyof typeof Color) =>
