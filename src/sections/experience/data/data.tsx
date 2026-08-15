@@ -9,6 +9,7 @@ export interface ExperienceEntry {
   period: string;
   current?: boolean;
   image: StaticImageData;
+  summary?: string;
   points: React.JSX.Element[];
   stack: string[];
 }
@@ -21,24 +22,23 @@ export const data: ExperienceEntry[] = [
     period: "Jul 2024 — Actual",
     current: true,
     image: CivaImage,
+    summary:
+      "ERP interno de una de las principales empresas de transporte del Perú, con operación a nivel nacional y un promedio de 5,000 ventas de boletos al día.",
     points: [
       <p key={1}>
-        Desarrollo <span>funcionalidades de punta a punta</span> en el ERP
-        interno que soporta la venta de pasajes y el envío de encomiendas a
-        nivel nacional.
+        Habilité <span>el pago con múltiples métodos</span>, donde antes solo
+        se aceptaba uno. Hoy una venta de boletos, carga o equipaje puede
+        combinar efectivo, tarjeta por PinPAD, enlace de pago y QR,
+        repartiendo el monto correctamente entre cada método.
       </p>,
       <p key={2}>
-        Implemento <span>requerimientos funcionales</span> de las áreas de
-        carga, boletos y administración, desde la interfaz hasta la base de
-        datos.
+        Digitalicé <span>la operación de carga y equipajes</span>, que se
+        manejaba a mano, sumando trazabilidad de cada envío desde la
+        recepción hasta la entrega.
       </p>,
       <p key={3}>
-        Gestiono <span>consultas y migraciones</span> sobre bases de datos
-        MySQL en producción.
-      </p>,
-      <p key={4}>
-        Trabajo con <span>Scrum</span> y gestión de tareas en{" "}
-        <span>JIRA</span> junto al equipo de sistemas.
+        Automaticé <span>la programación de recursos</span> con reglas de
+        negocio que reemplazaron la asignación manual de buses y personal.
       </p>,
     ],
     stack: ["React", "Spring Boot", "Java", "MySQL", "AWS"],

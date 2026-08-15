@@ -8,6 +8,7 @@ export default function Card({
   period,
   current,
   image,
+  summary,
   points,
   stack,
 }: ExperienceEntry) {
@@ -44,6 +45,9 @@ export default function Card({
             <p className="text-sm text-primary">{role}</p>
           </div>
         </div>
+        {summary && (
+          <p className="mt-3 text-sm text-muted">{summary}</p>
+        )}
         <ul className="mt-5 space-y-2.5">
           {points.map((point, index) => (
             <li

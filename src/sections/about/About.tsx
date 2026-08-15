@@ -2,7 +2,11 @@ import Reveal from "@/components/motion/Reveal";
 
 const facts = [
   { label: "Ubicación", value: "Lima, Perú" },
-  { label: "Formación", value: "Desarrollo de Sistemas de Información, IDAT" },
+  {
+    label: "Formación",
+    value: "Ingeniería de Software, UTP",
+    secondary: "Desarrollo de Sistemas de Información, IDAT",
+  },
   { label: "Actualmente", value: "Full Stack en Turismo CIVA" },
   { label: "Programando desde", value: "2021" },
 ];
@@ -20,17 +24,20 @@ export default function About() {
       <Reveal className="mt-10 grid gap-10 md:mt-14 md:grid-cols-[1fr,18rem] md:gap-16" delay={0.1}>
         <div className="space-y-4 leading-relaxed text-muted">
           <p>
-            Empecé a programar en 2021 y me formé en Desarrollo de Sistemas de
-            Información en el Instituto IDAT. Desde entonces he pasado del
-            frontend al desarrollo full stack: hoy construyo funcionalidades
-            completas — interfaz, servicios y base de datos — para sistemas que
-            se usan a diario en producción.
+            Construyo funcionalidades completas, de la interfaz a la base de
+            datos, para sistemas que se usan a diario en producción. Programo
+            desde 2021 y actualmente estudio Ingeniería de Software en la UTP
+            mientras trabajo a tiempo completo.
           </p>
           <p>
-            Me gusta trabajar en equipo y que las cosas funcionen bien de
-            verdad: he revisado código de otros desarrolladores, definido la
-            estructura de proyectos y coordinado tareas, siempre buscando que
-            el equipo avance con orden.
+            Me gusta trabajar en equipo y que las cosas queden bien hechas. He
+            revisado código de otros desarrolladores, definido la estructura
+            de proyectos y coordinado tareas, siempre buscando que el equipo
+            avance con orden.
+          </p>
+          <p>
+            Ahora me interesa el lado de arquitectura e infraestructura, y
+            estoy metido en eso por mi cuenta.
           </p>
           <p>
             Si quieres conversar sobre una oportunidad o un proyecto,{" "}
@@ -50,6 +57,9 @@ export default function About() {
                 {fact.label}
               </dt>
               <dd className="mt-0.5 text-sm text-white">{fact.value}</dd>
+              {fact.secondary && (
+                <dd className="mt-0.5 text-xs text-muted">{fact.secondary}</dd>
+              )}
             </div>
           ))}
         </dl>
