@@ -1,7 +1,6 @@
 import { StaticImageData } from "next/image";
 import SiomImage from "@/assets/siom.png";
 import IntranetImage from "@/assets/intranet.png";
-import LandingDevDatepImage from "@/assets/landing-devdatep.png";
 import CivaErpImage from "@/assets/civa-bg.png";
 import EnrollmentSystemImage from "@/assets/architecture.gif";
 
@@ -70,16 +69,6 @@ export const data: Project[] = [
       "Portal interno donde los empleados marcan su asistencia y consultan sus reportes. Me encargué del mantenimiento y de nuevas funcionalidades sobre una base de código existente.",
     tags: ["React", "Laravel", "MySQL", "TailwindCSS", "Zustand"],
     image: IntranetImage,
-    isPrivate: true,
-  },
-  {
-    id: 5,
-    title: "Sitio web corporativo",
-    context: "Devdatep Consulting",
-    description:
-      "Landing page que presenta los servicios de la consultora, con diseño responsivo y enfoque en rendimiento.",
-    tags: ["React", "TailwindCSS"],
-    image: LandingDevDatepImage,
     isPrivate: true,
   },
 ];
