@@ -22,6 +22,7 @@ const Card = ({
   image,
   tags,
   isPrivate,
+  imageZoomOutOnHover,
 }: CardProps) => {
   return (
     <article
@@ -33,7 +34,11 @@ const Card = ({
         <Image
           src={image}
           alt={`Captura de pantalla: ${title}`}
-          className="aspect-[16/10] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+          className={`aspect-[16/10] w-full object-cover transition-transform duration-500 ${
+            imageZoomOutOnHover
+              ? "scale-110 object-left-top group-hover:scale-100"
+              : "object-top group-hover:scale-[1.03]"
+          }`}
         />
       </div>
       <div className="lg:w-1/2">

@@ -3,6 +3,7 @@ import SiomImage from "@/assets/siom.png";
 import IntranetImage from "@/assets/intranet.png";
 import LandingDevDatepImage from "@/assets/landing-devdatep.png";
 import CivaErpImage from "@/assets/civa-bg.png";
+import EnrollmentSystemImage from "@/assets/architecture.gif";
 
 export interface Project {
   id: number;
@@ -14,6 +15,7 @@ export interface Project {
   isPrivate: boolean;
   github?: string;
   demo?: string;
+  imageZoomOutOnHover?: boolean;
 }
 
 export const data: Project[] = [
@@ -29,6 +31,29 @@ export const data: Project[] = [
   },
   {
     id: 2,
+    title: "Sistema de Matrícula Universitaria (Microservicios)",
+    context: "Tecsup · Curso de Arquitectura de Software",
+    description:
+      "Plataforma de matrícula universitaria con arquitectura de microservicios: gateway, descubrimiento de servicios, autenticación OAuth2+JWT+2FA, matrícula con patrón Outbox y pagos vía Mercado Pago, notificaciones por email y auditoría con Kafka. Todo orquestado con Docker Compose.",
+    tags: [
+      "Java",
+      "Spring Boot",
+      "Spring Cloud",
+      "React",
+      "TypeScript",
+      "PostgreSQL",
+      "Kafka",
+      "Docker",
+      "Vite",
+      "TailwindCSS",
+    ],
+    image: EnrollmentSystemImage,
+    isPrivate: false,
+    github: "https://github.com/SebastianLl28/enrollment-system-microservices",
+    imageZoomOutOnHover: true,
+  },
+  {
+    id: 3,
     title: "Sistema de asistencia con validación biométrica",
     context: "Devdatep Consulting · En producción",
     description:
@@ -38,7 +63,7 @@ export const data: Project[] = [
     isPrivate: true,
   },
   {
-    id: 3,
+    id: 4,
     title: "Intranet corporativa",
     context: "Devdatep Consulting · Mantenimiento y mejoras",
     description:
@@ -48,7 +73,7 @@ export const data: Project[] = [
     isPrivate: true,
   },
   {
-    id: 4,
+    id: 5,
     title: "Sitio web corporativo",
     context: "Devdatep Consulting",
     description:
