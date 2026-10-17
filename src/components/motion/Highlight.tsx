@@ -1,6 +1,8 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { useRef } from "react";
+import { cn } from "@/utils/cn";
+import { useInView } from "./useInView";
 
 interface HighlightProps {
   children: React.ReactNode;
@@ -17,27 +19,21 @@ export default function Highlight({
   delay = 0,
   onMount = false,
 }: HighlightProps) {
-  const reduceMotion = useReducedMotion();
-
-  const sweep = {
-    initial: reduceMotion ? { scaleX: 1 } : { scaleX: 0 },
-    animate: { scaleX: 1 },
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const, delay },
-  };
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, !onMount);
 
   return (
-    <span className={`relative inline-block px-3 text-white ${className ?? ""}`}>
-      <motion.span
-        className="absolute inset-0 origin-left bg-secondary"
+    <span
+      ref={ref}
+      className={cn("relative inline-block px-3 text-white", className)}
+    >
+      <span
+        className={cn(
+          "absolute inset-0 origin-left bg-secondary",
+          onMount || inView ? "animate-sweep" : "scale-x-0",
+        )}
+        style={{ animationDelay: `${delay}s` }}
         aria-hidden="true"
-        initial={sweep.initial}
-        {...(onMount
-          ? { animate: sweep.animate }
-          : {
-              whileInView: sweep.animate,
-              viewport: { once: true, margin: "-80px" },
-            })}
-        transition={sweep.transition}
       />
       <span className="relative">{children}</span>
     </span>

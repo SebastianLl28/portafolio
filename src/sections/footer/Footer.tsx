@@ -27,7 +27,7 @@ export default function Footer() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <LinkButton
               href="mailto:llamucasebas@gmail.com"
-              className="border-secondary bg-secondary text-white hover:border-secondary hover:bg-secondary/85"
+              className="border-secondary bg-secondary font-semibold text-ink hover:border-primary hover:bg-primary"
             >
               <MailIcon size={18} />
               llamucasebas@gmail.com

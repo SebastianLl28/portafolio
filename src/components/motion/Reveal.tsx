@@ -1,6 +1,8 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { useRef } from "react";
+import { cn } from "@/utils/cn";
+import { useInView } from "./useInView";
 
 interface RevealProps {
   children: React.ReactNode;
@@ -15,16 +17,19 @@ export default function Reveal({
   className,
   delay = 0,
 }: RevealProps) {
-  const reduceMotion = useReducedMotion();
-  const Component = as === "li" ? motion.li : motion.div;
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref);
+  const Component = as as "div";
 
   return (
     <Component
-      className={className}
-      initial={reduceMotion ? false : { opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay }}
+      ref={ref}
+      className={cn(
+        "transition-[opacity,transform] duration-[600ms] ease-[cubic-bezier(0.22,1,0.36,1)]",
+        inView ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0",
+        className,
+      )}
+      style={{ transitionDelay: `${delay}s` }}
     >
       {children}
     </Component>

@@ -52,7 +52,7 @@ export default function Hero() {
         <div className="animate-rise mt-10 flex flex-wrap items-center gap-3 [animation-delay:400ms]">
           <LinkButton
             href="#proyectos"
-            className="border-secondary bg-secondary text-white hover:border-secondary hover:bg-secondary/85"
+            className="border-secondary bg-secondary font-semibold text-ink hover:border-primary hover:bg-primary"
           >
             Ver proyectos
             <ArrowUpRightIcon />

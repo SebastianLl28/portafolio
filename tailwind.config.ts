@@ -25,6 +25,7 @@ const config: Config = {
       animation: {
         rise: "rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both",
         lift: "lift 0.7s cubic-bezier(0.22, 1, 0.36, 1) both",
+        sweep: "sweep 0.6s cubic-bezier(0.22, 1, 0.36, 1) both",
         breathe: "breathe 7s ease-in-out infinite",
       },
       keyframes: {
@@ -35,6 +36,10 @@ const config: Config = {
         lift: {
           from: { transform: "translateY(1.25rem)" },
           to: { transform: "translateY(0)" },
+        },
+        sweep: {
+          from: { transform: "scaleX(0)" },
+          to: { transform: "scaleX(1)" },
         },
         breathe: {
           "0%, 100%": { transform: "scale(1)", opacity: "1" },
