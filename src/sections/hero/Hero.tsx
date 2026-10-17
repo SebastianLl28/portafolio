@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import ProfileImage from "@/assets/profile.webp";
 import LinkButton from "@/components/ui/LinkButton";
 import Highlight from "@/components/motion/Highlight";
@@ -61,22 +60,22 @@ export default function Hero() {
             Descargar CV
           </LinkButton>
           <div className="ml-1 flex items-center gap-1">
-            <Link
+            <a
               href="https://github.com/SebastianLl28"
               target="_blank"
               aria-label="GitHub"
               className="rounded-full p-2.5 text-muted transition-colors hover:bg-white/10 hover:text-white"
             >
               <GitHubIcon size={22} />
-            </Link>
-            <Link
+            </a>
+            <a
               href="https://www.linkedin.com/in/sebastian-llamuca"
               target="_blank"
               aria-label="LinkedIn"
               className="rounded-full p-2.5 text-muted transition-colors hover:bg-white/10 hover:text-white"
             >
               <LinkedInIcon size={22} />
-            </Link>
+            </a>
           </div>
         </div>
       </div>

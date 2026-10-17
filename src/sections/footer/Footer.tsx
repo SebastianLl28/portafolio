@@ -1,4 +1,3 @@
-import Link from "next/link";
 import LinkButton from "@/components/ui/LinkButton";
 import Highlight from "@/components/motion/Highlight";
 import Reveal from "@/components/motion/Reveal";
@@ -48,22 +47,22 @@ export default function Footer() {
             © {new Date().getFullYear()} Sebastian Llamuca Dueñas
           </p>
           <div className="flex items-center gap-1">
-            <Link
+            <a
               href="https://github.com/SebastianLl28"
               target="_blank"
               aria-label="GitHub"
               className="rounded-full p-2 text-muted transition-colors hover:text-white"
             >
               <GitHubIcon size={18} />
-            </Link>
-            <Link
+            </a>
+            <a
               href="https://www.linkedin.com/in/sebastian-llamuca"
               target="_blank"
               aria-label="LinkedIn"
               className="rounded-full p-2 text-muted transition-colors hover:text-white"
             >
               <LinkedInIcon size={18} />
-            </Link>
+            </a>
           </div>
         </div>
       </footer>

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Badge } from "@/components/ui/Badge";
 import {
   ArrowUpRightIcon,
@@ -80,24 +79,24 @@ const Card = ({
           ) : (
             <>
               {github && (
-                <Link
+                <a
                   href={github}
                   target="_blank"
                   className="flex items-center gap-1.5 text-white transition-colors hover:text-primary"
                 >
                   <GitHubIcon size={16} />
                   Ver código
-                </Link>
+                </a>
               )}
               {demo && (
-                <Link
+                <a
                   href={demo}
                   target="_blank"
                   className="flex items-center gap-1.5 text-white transition-colors hover:text-primary"
                 >
                   Ver demo
                   <ArrowUpRightIcon size={14} />
-                </Link>
+                </a>
               )}
             </>
           )}
