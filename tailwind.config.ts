@@ -24,12 +24,17 @@ const config: Config = {
       },
       animation: {
         rise: "rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both",
+        lift: "lift 0.7s cubic-bezier(0.22, 1, 0.36, 1) both",
         breathe: "breathe 7s ease-in-out infinite",
       },
       keyframes: {
         rise: {
           from: { opacity: "0", transform: "translateY(1.25rem)" },
           to: { opacity: "1", transform: "translateY(0)" },
+        },
+        lift: {
+          from: { transform: "translateY(1.25rem)" },
+          to: { transform: "translateY(0)" },
         },
         breathe: {
           "0%, 100%": { transform: "scale(1)", opacity: "1" },

@@ -2,7 +2,7 @@ import { StaticImageData } from "next/image";
 import SiomImage from "@/assets/siom.png";
 import IntranetImage from "@/assets/intranet.png";
 import CivaErpImage from "@/assets/civa-bg.png";
-import EnrollmentSystemImage from "@/assets/architecture.gif";
+import EnrollmentSystemImage from "@/assets/architecture-poster.webp";
 
 export interface Project {
   id: number;
@@ -11,6 +11,7 @@ export interface Project {
   description: string;
   tags: string[];
   image: StaticImageData;
+  video?: string;
   isPrivate: boolean;
   github?: string;
   demo?: string;
@@ -47,6 +48,7 @@ export const data: Project[] = [
       "TailwindCSS",
     ],
     image: EnrollmentSystemImage,
+    video: "/videos/architecture.mp4",
     isPrivate: false,
     github: "https://github.com/SebastianLl28/enrollment-system-microservices",
     imageZoomOutOnHover: true,

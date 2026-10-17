@@ -8,11 +8,13 @@ import Skills from "@/sections/skills/Skills";
 export default function page() {
   return (
     <>
-      <Hero />
-      <Experience />
-      <Projects />
-      <About />
-      <Skills />
+      <main>
+        <Hero />
+        <Experience />
+        <Projects />
+        <About />
+        <Skills />
+      </main>
       <Footer />
     </>
   );

@@ -20,10 +20,17 @@ const Card = ({
   github,
   demo,
   image,
+  video,
   tags,
   isPrivate,
   imageZoomOutOnHover,
 }: CardProps) => {
+  const mediaClass = `aspect-[16/10] w-full object-cover transition-transform duration-500 ${
+    imageZoomOutOnHover
+      ? "scale-110 object-left-top group-hover:scale-100"
+      : "object-top group-hover:scale-[1.03]"
+  }`;
+
   return (
     <article
       className={`flex w-full flex-col gap-6 lg:items-center lg:gap-14 ${
@@ -31,15 +38,27 @@ const Card = ({
       }`}
     >
       <div className="group relative overflow-hidden rounded-xl border border-line lg:w-1/2">
-        <Image
-          src={image}
-          alt={`Captura de pantalla: ${title}`}
-          className={`aspect-[16/10] w-full object-cover transition-transform duration-500 ${
-            imageZoomOutOnHover
-              ? "scale-110 object-left-top group-hover:scale-100"
-              : "object-top group-hover:scale-[1.03]"
-          }`}
-        />
+        {video ? (
+          <video
+            src={video}
+            poster={image.src}
+            width={image.width}
+            height={image.height}
+            autoPlay
+            loop
+            muted
+            playsInline
+            aria-label={`Animación: ${title}`}
+            className={mediaClass}
+          />
+        ) : (
+          <Image
+            src={image}
+            alt={`Captura de pantalla: ${title}`}
+            sizes="(min-width: 1024px) 490px, 92vw"
+            className={mediaClass}
+          />
+        )}
       </div>
       <div className="lg:w-1/2">
         <p className="eyebrow">{context}</p>

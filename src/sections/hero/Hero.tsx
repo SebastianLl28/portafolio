@@ -13,7 +13,8 @@ export default function Hero() {
         aria-hidden="true"
       />
       <div className="mx-auto w-11/12 max-w-5xl pb-16 pt-28">
-        <h1 className="animate-rise font-display text-5xl font-bold leading-[1.05] tracking-tight sm:text-7xl lg:text-8xl">
+        <h1 className="animate-lift font-display text-5xl font-bold leading-[1.05] tracking-tight sm:text-7xl lg:text-8xl">
+          <span className="sr-only">Sebastian Llamuca, </span>
           Desarrollador{" "}
           <Highlight onMount delay={0.3}>
             Full Stack
