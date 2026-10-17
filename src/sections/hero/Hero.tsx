@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ProfileImage from "@/assets/profile.webp";
+import IconLink from "@/components/ui/IconLink";
 import LinkButton from "@/components/ui/LinkButton";
 import Highlight from "@/components/motion/Highlight";
 import { ArrowUpRightIcon, GitHubIcon, LinkedInIcon } from "@/components/icons";
@@ -59,23 +60,21 @@ export default function Hero() {
           <LinkButton href="/sebastian_llamuca_cv.pdf" target="_blank">
             Descargar CV
           </LinkButton>
-          <div className="ml-1 flex items-center gap-1">
-            <a
+          <div className="ml-1 flex items-center gap-2">
+            <IconLink
               href="https://github.com/SebastianLl28"
               target="_blank"
               aria-label="GitHub"
-              className="rounded-full p-2.5 text-muted transition-colors hover:bg-white/10 hover:text-white"
             >
               <GitHubIcon size={22} />
-            </a>
-            <a
+            </IconLink>
+            <IconLink
               href="https://www.linkedin.com/in/sebastian-llamuca"
               target="_blank"
               aria-label="LinkedIn"
-              className="rounded-full p-2.5 text-muted transition-colors hover:bg-white/10 hover:text-white"
             >
               <LinkedInIcon size={22} />
-            </a>
+            </IconLink>
           </div>
         </div>
       </div>

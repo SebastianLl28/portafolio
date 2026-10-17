@@ -1,3 +1,4 @@
+import IconLink from "@/components/ui/IconLink";
 import LinkButton from "@/components/ui/LinkButton";
 import Highlight from "@/components/motion/Highlight";
 import Reveal from "@/components/motion/Reveal";
@@ -46,23 +47,23 @@ export default function Footer() {
           <p className="font-mono text-xs text-muted">
             © {new Date().getFullYear()} Sebastian Llamuca Dueñas
           </p>
-          <div className="flex items-center gap-1">
-            <a
+          <div className="flex items-center gap-2">
+            <IconLink
               href="https://github.com/SebastianLl28"
               target="_blank"
               aria-label="GitHub"
-              className="rounded-full p-2 text-muted transition-colors hover:text-white"
+              className="p-2"
             >
               <GitHubIcon size={18} />
-            </a>
-            <a
+            </IconLink>
+            <IconLink
               href="https://www.linkedin.com/in/sebastian-llamuca"
               target="_blank"
               aria-label="LinkedIn"
-              className="rounded-full p-2 text-muted transition-colors hover:text-white"
+              className="p-2"
             >
               <LinkedInIcon size={18} />
-            </a>
+            </IconLink>
           </div>
         </div>
       </footer>

@@ -8,7 +8,7 @@ const LinkButton = ({ children, className, ...args }: LinkButtonProps) => {
   return (
     <a
       className={cn(
-        "inline-flex items-center gap-2 rounded-full border border-line bg-white/5 px-5 py-2.5 text-sm font-medium transition-colors hover:border-primary/60 hover:bg-white/10",
+        "inline-flex items-center gap-2 rounded-full border border-line bg-surface px-5 py-2.5 text-sm font-medium transition-colors hover:border-primary/60",
         className
       )}
       {...args}

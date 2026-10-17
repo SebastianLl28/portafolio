@@ -31,7 +31,7 @@ export default function Nav() {
         <a
           href="/sebastian_llamuca_cv.pdf"
           target="_blank"
-          className="rounded-full border border-line px-4 py-1.5 font-mono text-xs text-white transition-colors hover:border-primary hover:text-primary"
+          className="rounded-full border border-line bg-surface px-4 py-1.5 font-mono text-xs text-white transition-colors hover:border-primary hover:text-primary"
         >
           CV
         </a>
